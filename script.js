@@ -165,19 +165,22 @@ let startY = 0;
 let endX = 0;
 let endY = 0;
 
+// Capture the starting position of the touch
 document.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
   startY = e.touches[0].clientY;
 });
 
-// Add touchend event listener
+// Capture the ending position and handle swipe
 document.addEventListener("touchend", (e) => {
   endX = e.changedTouches[0].clientX;
   endY = e.changedTouches[0].clientY;
 
+  // Call the handleSwipe function
   handleSwipe();
 });
 
+// Handle swipe directions
 function handleSwipe() {
   const diffX = endX - startX;
   const diffY = endY - startY;
@@ -186,19 +189,19 @@ function handleSwipe() {
     // Horizontal swipe
     if (diffX > 50) {
       // Swipe right
-      move(2);
+      move(2); // Replace `move(2)` with your specific action for right swipe
     } else if (diffX < -50) {
       // Swipe left
-      move(0);
+      move(0); // Replace `move(0)` with your specific action for left swipe
     }
   } else {
     // Vertical swipe
     if (diffY > 50) {
       // Swipe down
-      move(1);
+      move(1); // Replace `move(1)` with your specific action for down swipe
     } else if (diffY < -50) {
       // Swipe up
-      move(3);
+      move(3); // Replace `move(3)` with your specific action for up swipe
     }
   }
 }

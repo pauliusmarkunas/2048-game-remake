@@ -1,17 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: #faf8ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-header.header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 30px;
   color: #fff;
   margin-bottom: 50px;
-  user-select: none;
+  width: 100%;
 }
 
 .header .logo {
@@ -55,11 +66,12 @@ header.header {
 
 .game-container {
   margin: 20px auto;
-  width: min-content;
+  display: inline-block;
 }
 
 .grid-container {
   display: grid;
+  width: min-content;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   background-color: #bbada0;
@@ -93,5 +105,17 @@ header.header {
   }
   to {
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .grid-cell {
+    width: 50px;
+    height: 50px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 20px;
   }
 }
