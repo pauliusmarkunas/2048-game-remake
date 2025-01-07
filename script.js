@@ -159,6 +159,50 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
+// for mobile swipe
+let startX = 0;
+let startY = 0;
+let endX = 0;
+let endY = 0;
+
+document.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+});
+
+// Add touchend event listener
+document.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  endY = e.changedTouches[0].clientY;
+
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diffX = endX - startX;
+  const diffY = endY - startY;
+
+  if (Math.abs(diffX) > Math.abs(diffY)) {
+    // Horizontal swipe
+    if (diffX > 50) {
+      // Swipe right
+      move(2);
+    } else if (diffX < -50) {
+      // Swipe left
+      move(0);
+    }
+  } else {
+    // Vertical swipe
+    if (diffY > 50) {
+      // Swipe down
+      move(1);
+    } else if (diffY < -50) {
+      // Swipe up
+      move(3);
+    }
+  }
+}
+
 // Start the game
 spawnTile();
 spawnTile();

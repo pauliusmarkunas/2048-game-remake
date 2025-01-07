@@ -11,6 +11,7 @@ header.header {
   padding: 20px;
   color: #fff;
   margin-bottom: 50px;
+  user-select: none;
 }
 
 .header .logo {
@@ -64,6 +65,7 @@ header.header {
   background-color: #bbada0;
   padding: 10px;
   border-radius: 10px;
+  user-select: none;
 }
 
 .grid-cell {
