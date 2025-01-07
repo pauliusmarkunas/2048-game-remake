@@ -166,10 +166,15 @@ let endX = 0;
 let endY = 0;
 
 // Capture the starting position of the touch
-document.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-  startY = e.touches[0].clientY;
-});
+document.addEventListener(
+  "touchstart",
+  (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    e.preventDefault();
+  },
+  { passive: false }
+);
 
 // Capture the ending position and handle swipe
 document.addEventListener("touchend", (e) => {
