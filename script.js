@@ -171,7 +171,9 @@ document.addEventListener(
   (e) => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
-    e.preventDefault();
+    if (!e.target.classList.contains("new-game-btn")) {
+      e.preventDefault();
+    }
   },
   { passive: false }
 );
