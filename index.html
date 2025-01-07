@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">2048</div>
+      <div class="scores">
+        <div class="score-box">
+          <div class="score-title">Score</div>
+          <div id="score">0</div>
+        </div>
+        <div class="score-box">
+          <div class="score-title">Best</div>
+          <div id="best-score">0</div>
+        </div>
+      </div>
+      <button class="new-game-btn" onclick="location.reload()">New Game</button>
+    </header>
+    <div class="game-container">
+      <div class="grid-container">
+        <!-- 16 cells for the game -->
+        <div class="grid-cell" id="cell-0"></div>
+        <div class="grid-cell" id="cell-1"></div>
+        <div class="grid-cell" id="cell-2"></div>
+        <div class="grid-cell" id="cell-3"></div>
+        <div class="grid-cell" id="cell-4"></div>
+        <div class="grid-cell" id="cell-5"></div>
+        <div class="grid-cell" id="cell-6"></div>
+        <div class="grid-cell" id="cell-7"></div>
+        <div class="grid-cell" id="cell-8"></div>
+        <div class="grid-cell" id="cell-9"></div>
+        <div class="grid-cell" id="cell-10"></div>
+        <div class="grid-cell" id="cell-11"></div>
+        <div class="grid-cell" id="cell-12"></div>
+        <div class="grid-cell" id="cell-13"></div>
+        <div class="grid-cell" id="cell-14"></div>
+        <div class="grid-cell" id="cell-15"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
